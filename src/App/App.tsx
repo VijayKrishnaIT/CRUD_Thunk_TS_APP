@@ -1,26 +1,26 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "../App/App.css";
+import SideMenu from "../components/SideMenu";
+import Header from "../components/Header";
+import { CssBaseline, makeStyles } from "@material-ui/core";
 
+const useStyles = makeStyles({
+  appMain: {
+    paddingLeft: "320px",
+    width: "100%",
+  },
+});
 function App() {
+  const classes = useStyles();
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    //wrap more than 1 component React.Fragment
+    <React.Fragment>
+      <SideMenu />
+      <div className={classes.appMain}>
+        <Header />
+      </div>
+      <CssBaseline />
+    </React.Fragment>
   );
 }
-
 export default App;
