@@ -17,3 +17,11 @@ How to apply CSS ? Using makeStyles
 
 How to add more than 1 component?
 wrap more than 1 component <React.Fragment />
+
+# AppBar helps to create the Navigation Bar.
+
+# AppBar children is Toolbar
+
+# CssBaseline space divided equally.
+
+# <InputBase /> used to create searchbar.

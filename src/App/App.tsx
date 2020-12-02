@@ -1,8 +1,12 @@
 import React from "react";
-import "../App/App.css";
 import SideMenu from "../components/SideMenu";
 import Header from "../components/Header";
-import { CssBaseline, makeStyles } from "@material-ui/core";
+import {
+  CssBaseline,
+  makeStyles,
+  createMuiTheme,
+  ThemeProvider,
+} from "@material-ui/core";
 
 const useStyles = makeStyles({
   appMain: {
@@ -10,17 +14,24 @@ const useStyles = makeStyles({
     width: "100%",
   },
 });
+const customTheme = createMuiTheme({
+  palette: {
+    primary: {
+      main: "#FF0000",
+    },
+  },
+});
 function App() {
   const classes = useStyles();
   return (
     //wrap more than 1 component React.Fragment
-    <React.Fragment>
+    <ThemeProvider theme={customTheme}>
       <SideMenu />
       <div className={classes.appMain}>
         <Header />
       </div>
       <CssBaseline />
-    </React.Fragment>
+    </ThemeProvider>
   );
 }
 export default App;
