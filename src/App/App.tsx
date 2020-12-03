@@ -1,12 +1,14 @@
 import React from "react";
 import SideMenu from "../components/SideMenu";
 import Header from "../components/Header";
+import GroupAddIcon from "@material-ui/icons/GroupAdd";
 import {
   CssBaseline,
   makeStyles,
   createMuiTheme,
   ThemeProvider,
 } from "@material-ui/core";
+import PageHeader from "../components/PageHeader";
 
 const useStyles = makeStyles({
   appMain: {
@@ -29,6 +31,11 @@ function App() {
       <SideMenu />
       <div className={classes.appMain}>
         <Header />
+        <PageHeader
+          title="EMPLOYEE MANAGEMENT SYSTEM"
+          subtitle="Add Employee"
+          icon={<GroupAddIcon fontSize={"large"} />}
+        />
       </div>
       <CssBaseline />
     </ThemeProvider>

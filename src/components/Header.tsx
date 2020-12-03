@@ -10,6 +10,7 @@ import { makeStyles } from "@material-ui/core";
 const useStyles = makeStyles((theme) => ({
   root: {
     backgroundColor: "#fff",
+    transform: "translateZ(0)",
   },
   searchItem: {
     opacity: "0.6",
