@@ -4,10 +4,35 @@ import "./index.css";
 import App from "./App/App";
 import reportWebVitals from "./reportWebVitals";
 
+//index.tsx file called as configuration file.
+//this configuration file helps to provide the smooth communication in thunk application.
+
+//import createStore
+//createStore function used to create the store
+//import applyMiddleware
+//appleMiddleware function used to apply the "thunk"
+
+//thunk used to provide the communication between action =>reducer =>component
+
+import { createStore, applyMiddleware } from "redux";
+
+//import Provider
+//Provider makes the store availability to Component
+import { Provider } from "react-redux";
+
+//import reducer
+import reducer from "./reducer/reducer";
+
+//import thunk
+import thunk from "redux-thunk";
+
+//create the store
+const store = createStore(reducer, applyMiddleware(thunk));
+
 ReactDOM.render(
-  <React.StrictMode>
+  <Provider store={store}>
     <App />
-  </React.StrictMode>,
+  </Provider>,
   document.getElementById("root")
 );
 

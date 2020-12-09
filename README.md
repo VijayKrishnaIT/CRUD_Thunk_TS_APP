@@ -91,3 +91,81 @@ Action is giving response back to reducer.
 Reducer will give the information Component.
 
 # How to connect to reducer? dispatch
+
+# State:
+
+    Redux       (ReactJS)
+
+    NgRx        (Angular) - to maintain state in angular applications.
+
+# Actions
+
+    GET_EMPLOYEES
+
+    ADD_EMPLOYEES
+
+    UPDATE_EMPLOYEE
+
+    DELETE_EMPLOYEE
+
+# Monitor the Actions we have Thunk
+
+- Thunk is 3rd party library.
+
+  Ex. GET_EMPLOYEE Action executing or not.
+
+# Saga Library
+
+# How to Monitor the actions?
+
+Thunk
+
+# How to Modify the Actions?
+
+Saga.
+
+# Architecture
+
+1. Requesting from Table Component (Pagination, Searching, Sorting) to Action
+
+2. Async call "axios" between Action (Thunk) GET_EMPLOYEE and Server
+
+3. Response Back from Server to Action
+
+4. Actions to Reducer
+
+5. Updating Reducer result to Store
+
+6. Subscribing result from Store to Table Component.
+
+# How to Connect to Server?
+
+Axios.
+
+- import axios from "axios";
+
+- axios module used to make the Asynchronous calls.
+
+# Redux compaitable to ReactJS
+
+# NgRx Compaitable to Angular Environment.
+
+# Actions
+
+    - GET_EMPLOYEES
+
+    - ADD_EMPLOYEE
+
+    - UPDATE_EMPLOYEE
+
+    - DELETE_EMPLOYEE
+
+- these things are called Actions.
+
+# Thunk Library is used to Monitor the Actions.
+
+# Saga Library is used to Manipulate the Actions.
+
+# How to Monitor the Actions? Thunk
+
+# How to Manipulate the Actions? Saga
