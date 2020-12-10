@@ -1,10 +1,9 @@
-import axios from "axios";
+//import axios module
 //axios module used to make the asynchronous calls
-//connect to server
+import axios from "axios";
 
-/*******************GETEMPLOYEES******************************************/
+/*******************************************GETEMPLOYEES *****************************/
 export const getEmployees = (): any => {
-  //dispatching the response
   return (dispatch: any) => {
     return axios.get("http://localhost:8080/employees").then(
       (posRes: any) => {
@@ -17,19 +16,17 @@ export const getEmployees = (): any => {
   };
 };
 export const fun_one = (records: any) => {
-  // connecting to reducer
+  //connecting to reducer
   return { type: "ALL_EMPLOYEES", value: records };
 };
+/*********************************************END ************************************/
 
-/***********************END**********************************************/
-
-/***************************ADDEMPLOYEE***********************************/
-//record coming from component
+/*******************************************ADDEMPLOYEE *****************************/
 export const addEmployee = (employee: any) => {
-  //employee will come from UI
+  //employee will come from UI (Component)
   return (dispatch: any) => {
     return axios.post("http://localhost:8080/newemployee", employee).then(
-      (posRes: any) => {
+      (posRes) => {
         posRes.data.newemployee = employee;
         dispatch(fun_two(posRes));
       },
@@ -39,15 +36,14 @@ export const addEmployee = (employee: any) => {
     );
   };
 };
-
 export const fun_two = (res: any) => {
   return { type: "ADD_EMPLOYEE", value: res };
 };
-/*************************************************************************/
+/*********************************************END ************************************/
 
-/***************************************UPDATE*******************************/
-export const updateEmployee = (record: any) => {
-  //employee will come from UI
+/*******************************************UPDATEEMPLOYEE *****************************/
+export const updateEmployee = (employee: any) => {
+  //employee will come from UI (Component)
   return (dispatch: any) => {
     return axios.put("http://localhost:8080/updateemployee", employee).then(
       (posRes: any) => {
@@ -63,15 +59,18 @@ export const updateEmployee = (record: any) => {
 export const fun_three = (res: any) => {
   return { type: "UPDATE_EMPLOYEE", value: res };
 };
-/****************************************************************************/
-/************************************DELETE**********************************/
-export const deleteEmployee = (record: any) => {
+/*********************************************END ************************************/
+
+/*******************************************DELETEEMPLOYEE *****************************/
+export const deleteEmployee = (employee: any) => {
+  //employee will come from UI (Component)
   return (dispatch: any) => {
     return axios
       .delete("http://localhost:8080/deleteemployee", { data: employee })
       .then(
         (posRes: any) => {
-          dispatch(fun_four(posRes.data));
+          posRes.data.newemployee = employee;
+          dispatch(fun_four(posRes));
         },
         (errRes: any) => {
           console.log(errRes);
@@ -82,4 +81,4 @@ export const deleteEmployee = (record: any) => {
 export const fun_four = (res: any) => {
   return { type: "DELETE_EMPLOYEE", value: res };
 };
-/****************************************************************************/
+/*********************************************END ************************************/

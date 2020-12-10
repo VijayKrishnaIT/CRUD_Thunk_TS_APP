@@ -169,3 +169,7 @@ Axios.
 # How to Monitor the Actions? Thunk
 
 # How to Manipulate the Actions? Saga
+
+# Grid
+
+- grid is divided into 12.

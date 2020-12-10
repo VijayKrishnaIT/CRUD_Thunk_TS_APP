@@ -1,14 +1,13 @@
 import React from "react";
 import SideMenu from "../components/SideMenu";
 import Header from "../components/Header";
-import GroupAddIcon from "@material-ui/icons/GroupAdd";
 import {
+  createMuiTheme,
   CssBaseline,
   makeStyles,
-  createMuiTheme,
   ThemeProvider,
 } from "@material-ui/core";
-import PageHeader from "../components/PageHeader";
+import Employees from "../components/pages/employee/Employees";
 
 const useStyles = makeStyles({
   appMain: {
@@ -16,6 +15,7 @@ const useStyles = makeStyles({
     width: "100%",
   },
 });
+
 const customTheme = createMuiTheme({
   palette: {
     primary: {
@@ -23,19 +23,15 @@ const customTheme = createMuiTheme({
     },
   },
 });
+
 function App() {
   const classes = useStyles();
   return (
-    //wrap more than 1 component React.Fragment
     <ThemeProvider theme={customTheme}>
       <SideMenu />
       <div className={classes.appMain}>
         <Header />
-        <PageHeader
-          title="EMPLOYEE MANAGEMENT SYSTEM"
-          subtitle="Add Employee"
-          icon={<GroupAddIcon fontSize={"large"} />}
-        />
+        <Employees />
       </div>
       <CssBaseline />
     </ThemeProvider>
