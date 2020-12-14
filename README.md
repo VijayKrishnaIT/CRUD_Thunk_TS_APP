@@ -173,3 +173,11 @@ Axios.
 # Grid
 
 - grid is divided into 12.
+
+# Master Component
+
+## Form Component
+
+### Controls.Input
+
+- Form.tsx is the intermediate component

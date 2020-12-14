@@ -1,17 +1,16 @@
 import React from "react";
 import { TextField } from "@material-ui/core";
 
-function Input(props: any) {
-  const { name, label, value } = props;
+export default function Input(props: any): any {
+  const { name, value, label, error = null, onChange } = props;
   return (
-    //pass data dynamically
     <TextField
       variant="outlined"
       label={label}
-      name={name}
       value={value}
-    ></TextField>
+      name={name}
+      onChange={onChange}
+      {...(error && { error: true, helperText: error })}
+    />
   );
 }
-
-export default Input;
